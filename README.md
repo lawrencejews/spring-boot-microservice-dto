@@ -24,8 +24,21 @@
 - Run the create instance on a new port by `java -jar -Dserver.port=8083 target/department-service-0.0.1-SNAPSHOT.jar `
 ##### Spring Cloud Gateway
 - Provides libraries for building an API Gateway on top of Spring WebFlux or Spring WebMVC.
-- Route Request, Load balancing and Security to controls user authentication.
+- Route Request, Load balancing and Security to controls User Authentication.
 - ERROR: with API-GATEWAY dependencies -> from ` <artifactId>spring-cloud-starter-gateway-mvc</artifactId>   ` to `<artifactId>spring-cloud-starter-gateway</artifactId>  `.
 ##### Config-Server 
 - The config-server stores all the configuration files for other services which are kept in a github repository.
 - Add Config Client and Spring Boot Actuator to the other services.
+- Migrate service configurations to new github: `https://github.com/lawrencejews/spring-boot-config-server`.
+- Create a `Refresh class` for the services and add them to the `config-server github repository`.
+###### Spring Cloud Bus
+- Links nodes of a distributed system with a lightweight message broker.  
+- Tell the message broker to call an `actuator endpoint bus` to enable refresh for all services in the configurations.
+- Add dependencies to services: `RabbitMQ` message broker using docker.`docker pull rabbitmq:3.11.0`
+- Run docker for RabbitMQ `docker run --rm -it -p 5672:5672 rabbitmq:3.11.0`.
+##### Distributed Tracing -> Zipkin
+- micrometer-observation dependency will allow us to collect and report metrics from our application to Zipkin.
+- micrometer-tracing-bridge-brave dependency will allow us to trace our spring boot application.
+- zipkin-reporter-brave dependency allows us to send traces that we collect to Zipkin.
+- feign-micrometer dependency was added because I am using feign in my microservices to call other APIs. This dependency will configure the micrometer to work with feign.
+- Download the Zipkin latest release executable jar: `curl -sSL https://zipkin.io/quickstart.sh | bash -s` and run `java -jar  zipkin-server-3.1.1-exec.jar`.

@@ -53,7 +53,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     EmployeeDto employeeDto = new EmployeeDto(
       employee.getId(),
-      employee  .getFirstName(),
+      employee.getFirstName(),
       employee.getLastName(),
       employee.getEmail(),
       employee.getDepartmentCode()
