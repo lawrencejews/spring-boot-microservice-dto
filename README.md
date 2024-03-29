@@ -42,3 +42,22 @@
 - zipkin-reporter-brave dependency allows us to send traces that we collect to Zipkin.
 - feign-micrometer dependency was added because I am using feign in my microservices to call other APIs. This dependency will configure the micrometer to work with feign.
 - Download the Zipkin latest release executable jar: `curl -sSL https://zipkin.io/quickstart.sh | bash -s` and run `java -jar  zipkin-server-3.1.1-exec.jar`.
+##### Circuit Breaker
+- Spring Cloud Circuit breaker provides an abstraction across different circuit breaker implementations.
+- Circuit breaker states: Closed -> request from one service to another, Open -> threshold fail and Half Open -> timer for open state.
+- Resilience4j spring cloud
+```
+repositories {
+    jCenter()
+}
+
+dependencies {
+    compile "io.github.resilience4j:resilience4j-spring-cloud2:${resilience4jVersion}"
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile('org.springframework.cloud:spring-cloud-starter-config')  
+}
+```However, u can use spring initialzer to add the actuator, resilience4j and aop dependencies.
+- Fallback method
+- Spring Retry `org.springframework.cloud:spring-cloud-starter-circuitbreaker-spring-retry`.
+- Rate limit
