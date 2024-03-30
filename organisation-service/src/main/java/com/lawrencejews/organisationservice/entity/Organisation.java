@@ -1,25 +1,31 @@
-package com.lawrencejews.employeeservice.entity;
+package com.lawrencejews.organisationservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "employees")
-public class Employee {
+@Table(name = "organisations")
+public class Organisation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstName;
-    private String lastName;
+    @Column(nullable = false)
+    private String organisationName;
+    private String organisationDescription;
     @Column(nullable = false, unique = true)
-    private String email;
-    private String departmentCode;
     private String organisationCode;
+    @CreationTimestamp
+    private LocalDateTime createdDate;
+
 }

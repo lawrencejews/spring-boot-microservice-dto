@@ -57,7 +57,11 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-aop')
     compile('org.springframework.cloud:spring-cloud-starter-config')  
 }
-```However, u can use spring initialzer to add the actuator, resilience4j and aop dependencies.
+```
+However, u can use spring initialzer to add the actuator, resilience4j and aop dependencies.
 - Fallback method
 - Spring Retry `org.springframework.cloud:spring-cloud-starter-circuitbreaker-spring-retry`.
 - Rate limit
+
+##### Dockering Spring Boot Application
+- 

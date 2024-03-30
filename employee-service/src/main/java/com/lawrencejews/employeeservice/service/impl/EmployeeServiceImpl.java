@@ -3,6 +3,7 @@ package com.lawrencejews.employeeservice.service.impl;
 import com.lawrencejews.employeeservice.dto.APIResponseDto;
 import com.lawrencejews.employeeservice.dto.DepartmentDto;
 import com.lawrencejews.employeeservice.dto.EmployeeDto;
+import com.lawrencejews.employeeservice.dto.OrganisationDto;
 import com.lawrencejews.employeeservice.entity.Employee;
 import com.lawrencejews.employeeservice.mapper.EmployeeMapper;
 import com.lawrencejews.employeeservice.repository.EmployeeRepository;
@@ -44,11 +45,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     DepartmentDto departmentDto =  apiClient.getDepartment(employee.getDepartmentCode());
 
+    OrganisationDto organisationDto = apiClient.getOrganisation(employee.getOrganisationCode());
+
+
+
     EmployeeDto employeeDto = EmployeeMapper.mapToEmployeeDto(employee);
 
         APIResponseDto apiResponseDto = new APIResponseDto();
         apiResponseDto.setEmployee(employeeDto);
         apiResponseDto.setDepartment(departmentDto);
+        apiResponseDto.setOrganisation(organisationDto);
         return apiResponseDto;
     }
 
