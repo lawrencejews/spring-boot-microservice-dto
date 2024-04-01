@@ -16,7 +16,6 @@ public class OrganisationServiceImpl implements OrganisationService {
     @Override
     public OrganisationDto saveOrganisation(OrganisationDto organisationDto) {
 
-
         // Convert OrganisationDTO into OrganisationJPA
         Organisation organisation = OrganisationMapper.mapToOrganisation(organisationDto);
 

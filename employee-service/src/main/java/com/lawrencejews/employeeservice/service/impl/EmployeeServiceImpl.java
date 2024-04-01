@@ -22,6 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepository employeeRepository;
 
+//    private WebClient webClient;
     private APIClient apiClient;
 
     @Override
@@ -46,7 +47,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     DepartmentDto departmentDto =  apiClient.getDepartment(employee.getDepartmentCode());
 
     OrganisationDto organisationDto = apiClient.getOrganisation(employee.getOrganisationCode());
-
 
 
     EmployeeDto employeeDto = EmployeeMapper.mapToEmployeeDto(employee);
