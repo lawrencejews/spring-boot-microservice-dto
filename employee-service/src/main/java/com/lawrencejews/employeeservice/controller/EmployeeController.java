@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(
         name = "Employee Service - EmployeeController",
-        description = " EmployeeController Exposes REST APIS ,for Employee Service"
+        description = " EmployeeController Exposes REST APIs for Employee Service"
 )
 @RestController
 @RequestMapping("api/employees")

@@ -21,7 +21,7 @@
 - Eureka Discovery Client: Display all the available instances 
 - Multiple instances: Create a `JAR file` and run it on a different `PORT`.
 - `AUTOSCALING`: Project Folder than run `mvn clean install` to build a SNAPSHOT.jar file & run it.  
-- Run the create instance on a new port by `java -jar -Dserver.port=8083 target/department-service-0.0.1-SNAPSHOT.jar `
+- Run to create instance on a new port by `java -jar -Dserver.port=8083 target/department-service-0.0.1-SNAPSHOT.jar `
 ##### Spring Cloud Gateway
 - Provides libraries for building an API Gateway on top of Spring WebFlux or Spring WebMVC.
 - Route Request, Load balancing and Security to controls User Authentication.
@@ -64,4 +64,5 @@ However, u can use spring initialzer to add the actuator, resilience4j and aop d
 - Rate limit
 
 ##### Dockering Spring Boot Application
-- 
+- Create a docker network for the containers `docker network create NAME ` aka `bridge`.
+- Run the images in the background using the created network then `docker exec -it DOCKER_CONTAINER_ID bash`
