@@ -31,7 +31,7 @@
 - Add Config Client and Spring Boot Actuator to the other services.
 - Migrate service configurations to new github: `https://github.com/lawrencejews/spring-boot-config-server`.
 - Create a `Refresh class` for the services and add them to the `config-server github repository`.
-###### Spring Cloud Bus
+##### Spring Cloud Bus
 - Links nodes of a distributed system with a lightweight message broker.  
 - Tell the message broker to call an `actuator endpoint bus` to enable refresh for all services in the configurations.
 - Add dependencies to services: `RabbitMQ` message broker using docker.`docker pull rabbitmq:3.11.0`
